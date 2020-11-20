@@ -55,6 +55,7 @@
 		5E7CFC8925683F7400F2A245 /* DatabaseService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E7CFC8825683F7400F2A245 /* DatabaseService.swift */; };
 		5E7CFC8E2568424700F2A245 /* Realm in Frameworks */ = {isa = PBXBuildFile; productRef = 5E7CFC8D2568424700F2A245 /* Realm */; };
 		5E7CFC902568424700F2A245 /* RealmSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 5E7CFC8F2568424700F2A245 /* RealmSwift */; };
+		5E86291725684DDB00F40D15 /* TVShowsLibrary.h in Headers */ = {isa = PBXBuildFile; fileRef = 5E86291525684DD500F40D15 /* TVShowsLibrary.h */; settings = {ATTRIBUTES = (Public, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -150,6 +151,8 @@
 		5E7CFC5825682B7500F2A245 /* BaseNetworkService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseNetworkService.swift; sourceTree = "<group>"; };
 		5E7CFC5925682B7500F2A245 /* TVShowsLibraryServiceLocator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TVShowsLibraryServiceLocator.swift; sourceTree = "<group>"; };
 		5E7CFC8825683F7400F2A245 /* DatabaseService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatabaseService.swift; sourceTree = "<group>"; };
+		5E86291525684DD500F40D15 /* TVShowsLibrary.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TVShowsLibrary.h; sourceTree = "<group>"; };
+		5E86291625684DD500F40D15 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		5EEE13D5251E565A004EDE1A /* RMCharacterDetailsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RMCharacterDetailsView.swift; sourceTree = "<group>"; };
 		5EEE13DC251E5D6B004EDE1A /* RMCharacterImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RMCharacterImageView.swift; sourceTree = "<group>"; };
 		5EEE13E1251E6475004EDE1A /* RMCharacterImageViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RMCharacterImageViewModel.swift; sourceTree = "<group>"; };
@@ -321,6 +324,8 @@
 		5E7CFC3A25682B7500F2A245 /* TVShowsLibrary */ = {
 			isa = PBXGroup;
 			children = (
+				5E86291625684DD500F40D15 /* Info.plist */,
+				5E86291525684DD500F40D15 /* TVShowsLibrary.h */,
 				5E7CFC802568384D00F2A245 /* Database */,
 				5E7CFC3B25682B7500F2A245 /* Networking */,
 				5E7CFC5925682B7500F2A245 /* TVShowsLibraryServiceLocator.swift */,
@@ -467,6 +472,7 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5E86291725684DDB00F40D15 /* TVShowsLibrary.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -916,7 +922,7 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				INFOPLIST_FILE = TVShowsLibrary/Info.plist;
+				INFOPLIST_FILE = "$(SRCROOT)/ServiceLocatorApp//TVShowsLibrary/Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -945,7 +951,7 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				INFOPLIST_FILE = TVShowsLibrary/Info.plist;
+				INFOPLIST_FILE = "$(SRCROOT)/ServiceLocatorApp//TVShowsLibrary/Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				LD_RUNPATH_SEARCH_PATHS = (
