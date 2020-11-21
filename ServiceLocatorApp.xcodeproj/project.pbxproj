@@ -56,6 +56,8 @@
 		5E7CFC8E2568424700F2A245 /* Realm in Frameworks */ = {isa = PBXBuildFile; productRef = 5E7CFC8D2568424700F2A245 /* Realm */; };
 		5E7CFC902568424700F2A245 /* RealmSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 5E7CFC8F2568424700F2A245 /* RealmSwift */; };
 		5E86291725684DDB00F40D15 /* TVShowsLibrary.h in Headers */ = {isa = PBXBuildFile; fileRef = 5E86291525684DD500F40D15 /* TVShowsLibrary.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		5E86291B25696A7300F40D15 /* CharactersService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E86291A25696A7300F40D15 /* CharactersService.swift */; };
+		5E862922256970C100F40D15 /* LoaderService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E862921256970C100F40D15 /* LoaderService.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -153,6 +155,8 @@
 		5E7CFC8825683F7400F2A245 /* DatabaseService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatabaseService.swift; sourceTree = "<group>"; };
 		5E86291525684DD500F40D15 /* TVShowsLibrary.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TVShowsLibrary.h; sourceTree = "<group>"; };
 		5E86291625684DD500F40D15 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		5E86291A25696A7300F40D15 /* CharactersService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharactersService.swift; sourceTree = "<group>"; };
+		5E862921256970C100F40D15 /* LoaderService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoaderService.swift; sourceTree = "<group>"; };
 		5EEE13D5251E565A004EDE1A /* RMCharacterDetailsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RMCharacterDetailsView.swift; sourceTree = "<group>"; };
 		5EEE13DC251E5D6B004EDE1A /* RMCharacterImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RMCharacterImageView.swift; sourceTree = "<group>"; };
 		5EEE13E1251E6475004EDE1A /* RMCharacterImageViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RMCharacterImageViewModel.swift; sourceTree = "<group>"; };
@@ -324,9 +328,9 @@
 		5E7CFC3A25682B7500F2A245 /* TVShowsLibrary */ = {
 			isa = PBXGroup;
 			children = (
+				5E86291E2569707000F40D15 /* Services */,
 				5E86291625684DD500F40D15 /* Info.plist */,
 				5E86291525684DD500F40D15 /* TVShowsLibrary.h */,
-				5E7CFC802568384D00F2A245 /* Database */,
 				5E7CFC3B25682B7500F2A245 /* Networking */,
 				5E7CFC5925682B7500F2A245 /* TVShowsLibraryServiceLocator.swift */,
 			);
@@ -340,7 +344,6 @@
 				5E7CFC3F25682B7500F2A245 /* ServiceModels */,
 				5E7CFC4625682B7500F2A245 /* Encoding */,
 				5E7CFC4B25682B7500F2A245 /* Models */,
-				5E7CFC5525682B7500F2A245 /* Services */,
 			);
 			path = Networking;
 			sourceTree = "<group>";
@@ -429,22 +432,41 @@
 			path = Requests;
 			sourceTree = "<group>";
 		};
-		5E7CFC5525682B7500F2A245 /* Services */ = {
+		5E7CFC5525682B7500F2A245 /* Networking */ = {
 			isa = PBXGroup;
 			children = (
 				5E7CFC5625682B7500F2A245 /* BreakingBadApiService.swift */,
 				5E7CFC5725682B7500F2A245 /* RickMortyApiService.swift */,
 				5E7CFC5825682B7500F2A245 /* BaseNetworkService.swift */,
 			);
-			path = Services;
+			path = Networking;
 			sourceTree = "<group>";
 		};
 		5E7CFC802568384D00F2A245 /* Database */ = {
 			isa = PBXGroup;
 			children = (
 				5E7CFC8825683F7400F2A245 /* DatabaseService.swift */,
+				5E86291A25696A7300F40D15 /* CharactersService.swift */,
 			);
 			path = Database;
+			sourceTree = "<group>";
+		};
+		5E86291E2569707000F40D15 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				5E8629202569708E00F40D15 /* Loader */,
+				5E7CFC5525682B7500F2A245 /* Networking */,
+				5E7CFC802568384D00F2A245 /* Database */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		5E8629202569708E00F40D15 /* Loader */ = {
+			isa = PBXGroup;
+			children = (
+				5E862921256970C100F40D15 /* LoaderService.swift */,
+			);
+			path = Loader;
 			sourceTree = "<group>";
 		};
 		5EEE13D3251E55DA004EDE1A /* RickMortyViews */ = {
@@ -661,9 +683,11 @@
 				5E7CFC6D25682B7500F2A245 /* TVShowsLibraryServiceLocator.swift in Sources */,
 				5E7CFC6425682B7500F2A245 /* JSONParameterEncoder.swift in Sources */,
 				5E7CFC6325682B7500F2A245 /* URLParameterEncoding.swift in Sources */,
+				5E862922256970C100F40D15 /* LoaderService.swift in Sources */,
 				5E7CFC5D25682B7500F2A245 /* HTTPMethod.swift in Sources */,
 				5E7CFC5C25682B7500F2A245 /* HTTPTask.swift in Sources */,
 				5E7CFC5A25682B7500F2A245 /* RickMortyEndPoint.swift in Sources */,
+				5E86291B25696A7300F40D15 /* CharactersService.swift in Sources */,
 				5E7CFC6A25682B7500F2A245 /* BreakingBadApiService.swift in Sources */,
 				5E7CFC8925683F7400F2A245 /* DatabaseService.swift in Sources */,
 				5E7CFC6C25682B7500F2A245 /* BaseNetworkService.swift in Sources */,

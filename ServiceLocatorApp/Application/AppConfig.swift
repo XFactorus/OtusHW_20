@@ -11,5 +11,9 @@ class AppConfig: NSObject {
     func setup() {
         TVShowsLibraryServiceLocator.addService(BreakingBadApiService())
         TVShowsLibraryServiceLocator.addService(RickMortyApiService())
+        
+        TVShowsLibraryServiceLocator.addService(DatabaseService())
+        TVShowsLibraryServiceLocator.addService(CharactersService())
+        TVShowsLibraryServiceLocator.addService(LoaderService())
     }
 }

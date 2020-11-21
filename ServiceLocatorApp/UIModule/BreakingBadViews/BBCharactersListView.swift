@@ -34,7 +34,7 @@ struct BBCharacterCell: View {
                     .font(.headline)
                     .lineLimit(2)
                     .multilineTextAlignment(.leading)
-                Text(character.nickname ?? "Undefined")
+                Text(character.nickname)
                     .font(.callout)
                 Spacer()
             }
@@ -42,7 +42,7 @@ struct BBCharacterCell: View {
             
             Spacer()
             
-            Text(character.status?.capitalized ?? "Unknown")
+            Text(character.status)
                 .font(.headline)
                 .lineLimit(2)
                 .multilineTextAlignment(.leading)

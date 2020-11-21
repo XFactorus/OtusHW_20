@@ -1,14 +1,14 @@
 import Foundation
 import RealmSwift
 
-class DatabaseService {
+public final class DatabaseService {
     var readRealm: Realm!
     var newRealm: Realm {
         let configuration = self.makeContactConfiguration(readOnly: false)
         return try! Realm(configuration: configuration)
     }
     
-    init() {
+    public init() {
         let configuration = self.makeContactConfiguration(readOnly: false)
         self.readRealm = try! Realm(configuration: configuration)
     }

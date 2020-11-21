@@ -34,6 +34,10 @@ public class RMCharacter: Object, Codable, Identifiable {
         character.image = "https://rickandmortyapi.com/api/character/avatar/1.jpeg"
         return character
     }
+    
+    public override class func primaryKey() -> String? {
+        return "id"
+    }
 }
 
 // MARK: - Location

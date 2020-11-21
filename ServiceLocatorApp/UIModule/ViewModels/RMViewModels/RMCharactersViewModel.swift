@@ -16,7 +16,8 @@ final class RMCharactersViewModel: ObservableObject {
     @Published private(set) var isPageLoading = false
     @Published private(set) var page: Int = 1
     
-    private var rickMortyService: RickMortyApiService? = TVShowsLibraryServiceLocator.service()
+//    private var rickMortyService: RickMortyApiService? = TVShowsLibraryServiceLocator.service()
+    private var loaderService: LoaderService? = TVShowsLibraryServiceLocator.service()
     
     private var initialInfoLoaded = false
     
@@ -41,16 +42,16 @@ final class RMCharactersViewModel: ObservableObject {
   
         isPageLoading = true
                 
-        rickMortyService?.loadRMCharacters(page) { (characters, errorText) in
+        loaderService?.loadRMCharacters(page) { (characters, errorText) in
             DispatchQueue.main.async {
                 self.isPageLoading = false
-                
+
                 guard let characters = characters, errorText == nil else {
-                    print(errorText ?? "Empty character")
+                    print(errorText ?? "Empty characters list")
                     return
                 }
                 self.page += 1
-                
+
                 self.listDataSource.append(contentsOf: characters)
             }
         }
