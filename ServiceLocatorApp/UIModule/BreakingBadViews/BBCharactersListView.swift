@@ -1,4 +1,3 @@
-
 import SwiftUI
 import TVShowsLibrary
 
@@ -8,16 +7,14 @@ struct BBCharactersListView: View {
     @EnvironmentObject private var navModel: NavControllerViewModel
     
     var body: some View {
-        List(self.viewModel.listDataSource) { character in
-            BBCharacterCell(character: character)
+        List(self.viewModel.listDataSource.indices, id: \.self) { index in
+            BBCharacterCell(character: self.viewModel.listDataSource[index])
                 .onAppear() {
-                    if self.viewModel.listDataSource.isLast(character) {
-                        self.viewModel.fetchPage()
-                    }
+                    self.viewModel.fetchIfRequired(index: index)
                 }
                 .onTapGesture {
                     print("Row tapped")
-                    navModel.push(BBCharacterDetailsView(character: character))
+                    navModel.push(BBCharacterDetailsView(character: self.viewModel.listDataSource[index]))
                 }
         }
     }

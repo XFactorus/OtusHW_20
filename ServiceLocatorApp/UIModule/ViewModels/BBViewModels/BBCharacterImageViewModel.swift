@@ -1,10 +1,3 @@
-//
-//  BBCharacterImageViewModel.swift
-//  ServiceLocatorApp
-//
-//  Created by Vladyslav Pokryshka on 27.09.2020.
-//
-
 import Foundation
 import Combine
 import SwiftUI

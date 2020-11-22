@@ -1,10 +1,3 @@
-//
-//  RMCharactersListView.swift
-//  ServiceLocatorApp
-//
-//  Created by Vladyslav Pokryshka on 24.09.2020.
-//
-
 import SwiftUI
 import TVShowsLibrary
 
@@ -14,16 +7,14 @@ struct RMCharactersListView: View {
     @EnvironmentObject private var navModel: NavControllerViewModel
     
     var body: some View {
-        List(self.viewModel.listDataSource) { character in
-            RMCharacterCell(character: character)
+        List(self.viewModel.listDataSource.indices, id: \.self) { index in
+            RMCharacterCell(character: self.viewModel.listDataSource[index])
                 .onAppear() {
-                    if self.viewModel.listDataSource.isLast(character) {
-                        self.viewModel.fetchPage()
-                    }
+                    self.viewModel.fetchIfRequired(index: index)
                 }
                 .onTapGesture {
                     print("Row tapped")
-                    navModel.push(RMCharacterDetailsView(character: character))
+                    navModel.push(RMCharacterDetailsView(character: self.viewModel.listDataSource[index]))
                 }
         }
     }

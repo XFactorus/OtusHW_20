@@ -2,7 +2,7 @@ import Foundation
 import RealmSwift
 
 public final class CharactersService {
-    private var readRealm: Realm?
+    private var readRealm: Realm!
     
     let databaseService: DatabaseService?
     
@@ -12,7 +12,7 @@ public final class CharactersService {
 
     }
     
-    func writeRMCharacters(_ rmCharacters: [RMCharacter], completion: @escaping (_ errorText: String?)->()) {
+    func writeCharacters<T: Object>(_ characters: [T], completion: @escaping (_ errorText: String?)->()) {
 //        DispatchQueue.global().async { // crashes in this thread
         DispatchQueue.main.async {
             autoreleasepool{
@@ -26,8 +26,7 @@ public final class CharactersService {
                 {
                     try writeRealm.write
                     {
-                        writeRealm.add(rmCharacters, update: .all)
-                        print("Data has been written to DB")
+                        writeRealm.add(characters, update: .modified)
                         completion(nil)
                     }
                 }
@@ -39,5 +38,14 @@ public final class CharactersService {
         }
     }
     
+    func readRMCharacters() -> Results<RMCharacter>{
+            return readRealm.objects(RMCharacter.self)
+                .sorted(byKeyPath: RMCharacter.getPrimaryKey(), ascending: true)
+    }
+    
+    func readBBCharacters() -> Results<BBCharacter>{
+        return readRealm.objects(BBCharacter.self)
+            .sorted(byKeyPath: BBCharacter.getPrimaryKey(), ascending: true)
+    }
 }
 

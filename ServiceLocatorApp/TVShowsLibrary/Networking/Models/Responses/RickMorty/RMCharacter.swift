@@ -1,10 +1,3 @@
-//
-//  RMCharacter.swift
-//  ServiceLocatorApp
-//
-//  Created by Vladyslav Pokryshka on 24.09.2020.
-//
-
 import Foundation
 import RealmSwift
 
@@ -25,6 +18,10 @@ public class RMCharacter: Object, Codable, Identifiable {
 
     public override init() {}
     
+    public enum CodingKeys: String, CodingKey {
+        case id, name, status, species, type, gender, origin, location, image, episode, url, created
+    }
+    
     public static func getMockCharacter() -> RMCharacter {
         let character = RMCharacter()
         character.id = 1
@@ -36,6 +33,10 @@ public class RMCharacter: Object, Codable, Identifiable {
     }
     
     public override class func primaryKey() -> String? {
+        return BBCharacter.getPrimaryKey()
+    }
+    
+    public static func getPrimaryKey() -> String {
         return "id"
     }
 }

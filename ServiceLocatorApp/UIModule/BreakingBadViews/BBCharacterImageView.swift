@@ -1,11 +1,4 @@
-//
-//  BBCharacterImageView.swift
-//  ServiceLocatorApp
-//
-//  Created by Vladyslav Pokryshka on 27.09.2020.
-//
-
-import SwiftUI
+simport SwiftUI
 
 struct BBCharacterImageView: View {
     var imageLink: String?

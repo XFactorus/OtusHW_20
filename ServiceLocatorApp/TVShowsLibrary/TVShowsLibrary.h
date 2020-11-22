@@ -1,10 +1,3 @@
-//
-//  TVShowsLibrary.h
-//  TVShowsLibrary
-//
-//  Created by Vladyslav Pokryshka on 20.11.2020.
-//
-
 #import <Foundation/Foundation.h>
 
 //! Project version number for TVShowsLibrary.

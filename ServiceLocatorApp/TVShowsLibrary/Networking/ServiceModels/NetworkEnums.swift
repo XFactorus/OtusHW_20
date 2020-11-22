@@ -1,10 +1,3 @@
-//
-//  NetworkEnums.swift
-//  ServiceLocatorApp
-//
-//  Created by Vladyslav Pokryshka on 11.10.2020.
-//
-
 import Foundation
 
 enum NetworkResponse:String {

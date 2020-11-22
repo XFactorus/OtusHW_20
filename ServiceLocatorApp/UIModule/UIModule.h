@@ -1,10 +1,3 @@
-//
-//  UIModule.h
-//  UIModule
-//
-//  Created by Vladyslav Pokryshka on 18.10.2020.
-//
-
 #import <Foundation/Foundation.h>
 
 //! Project version number for UIModule.

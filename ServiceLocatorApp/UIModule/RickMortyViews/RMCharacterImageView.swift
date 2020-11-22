@@ -1,10 +1,3 @@
-//
-//  RMCharacterImage.swift
-//  ServiceLocatorApp
-//
-//  Created by Vladyslav Pokryshka on 25.09.2020.
-//
-
 import SwiftUI
 
 struct RMCharacterImageView: View {
