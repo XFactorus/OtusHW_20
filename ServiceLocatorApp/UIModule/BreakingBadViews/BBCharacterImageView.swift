@@ -1,4 +1,4 @@
-simport SwiftUI
+import SwiftUI
 
 struct BBCharacterImageView: View {
     var imageLink: String?
